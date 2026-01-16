@@ -165,14 +165,14 @@ export const CliSyncCard = ({ proxyUrl, apiKey, className }: CliSyncCardProps) =
         const isAppSyncing = syncing[app];
 
         return (
-            <div className="flex flex-col bg-white dark:bg-base-200/50 rounded-xl border border-gray-100 dark:border-base-300 p-4 shadow-sm hover:shadow-md transition-all">
+            <div className="flex flex-col bg-white/50 dark:bg-gray-800/40 rounded-xl border border-gray-100 dark:border-white/5 p-4 shadow-sm hover:shadow-lg hover:border-blue-200/50 dark:hover:border-blue-500/30 transition-all duration-300 group">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-y-3 gap-x-2 mb-4">
                     <div className="flex items-center gap-3 min-w-0">
-                        <div className="p-2 bg-gray-50 dark:bg-base-300 rounded-lg shrink-0">
+                        <div className="p-2.5 bg-gray-50 dark:bg-base-300 rounded-lg shrink-0 group-hover:scale-110 transition-transform duration-300">
                             {icon}
                         </div>
                         <div className="min-w-0">
-                            <h4 className="text-sm font-bold text-gray-900 dark:text-base-content leading-tight truncate">
+                            <h4 className="text-sm font-bold text-gray-900 dark:text-gray-100 leading-tight truncate">
                                 {t('proxy.cli_sync.card_title', { name })}
                             </h4>
                             <div className="mt-1 flex items-center gap-1.5 overflow-hidden">
@@ -196,24 +196,24 @@ export const CliSyncCard = ({ proxyUrl, apiKey, className }: CliSyncCardProps) =
 
                     {!isAppLoading && status?.installed && (
                         <div className={cn(
-                            "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-tight shadow-sm transition-all h-6 shrink-0 whitespace-nowrap",
+                            "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold tracking-wide transition-all h-6 shrink-0 whitespace-nowrap shadow-sm",
                             status.is_synced
-                                ? "bg-green-500 text-white"
-                                : "bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-500"
+                                ? "bg-gradient-to-r from-green-500 to-emerald-600 text-white"
+                                : "bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-500 border border-amber-200/50 dark:border-amber-800/30"
                         )}>
                             {status.is_synced ? (
-                                <><CheckCircle2 size={12} /> {t('proxy.cli_sync.status.synced', { defaultValue: '已同步' })}</>
+                                <><CheckCircle2 size={12} className="shrink-0" /> {t('proxy.cli_sync.status.synced', { defaultValue: '已同步' })}</>
                             ) : (
-                                <><AlertCircle size={12} /> {t('proxy.cli_sync.status.not_synced', { defaultValue: '未同步' })}</>
+                                <><AlertCircle size={12} className="shrink-0" /> {t('proxy.cli_sync.status.not_synced', { defaultValue: '未同步' })}</>
                             )}
                         </div>
                     )}
                 </div>
 
                 <div className="mt-auto space-y-3">
-                    <div className="p-2.5 bg-gray-50 dark:bg-base-300/50 rounded-lg border border-dashed border-gray-200 dark:border-base-400 relative group/url">
+                    <div className="p-2.5 bg-gray-50/80 dark:bg-gray-900/40 rounded-lg border border-dashed border-gray-200 dark:border-white/10 relative group/url">
                         <div className="flex justify-between items-start mb-1">
-                            <div className="text-[9px] text-gray-400 uppercase font-bold tracking-wider">Current Base URL</div>
+                            <div className="text-[9px] text-gray-400 dark:text-gray-500 uppercase font-bold tracking-wider">{t('proxy.cli_sync.status.current_base_url')}</div>
                             {status?.installed && (
                                 <div className="flex gap-1 opacity-0 group-hover/url:opacity-100 transition-opacity">
                                     <button
@@ -245,7 +245,7 @@ export const CliSyncCard = ({ proxyUrl, apiKey, className }: CliSyncCardProps) =
                             "btn btn-sm w-full gap-2 rounded-xl transition-all font-bold shadow-sm",
                             status?.is_synced
                                 ? "btn-ghost border-gray-200 dark:border-base-400 text-gray-500 hover:bg-gray-100"
-                                : "btn-primary hover:shadow-lg"
+                                : "btn-primary hover:shadow-lg shadow-blue-500/20"
                         )}
                     >
                         {isAppSyncing ? (

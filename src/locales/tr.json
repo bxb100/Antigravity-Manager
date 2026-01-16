@@ -2,6 +2,7 @@
     "common": {
         "loading": "Yükleniyor...",
         "add": "Ekle",
+        "copy": "Kopyala",
         "action": "İşlem",
         "save": "Kaydet",
         "saved": "Başarıyla kaydedildi",
@@ -397,10 +398,10 @@
                     "advanced_tooltip": "İsteğe bağlı tam eşleşme geçersiz kılmaları. Gelen bir model dizesi bir kural anahtarıyla eşleşirse, eşlenen z.ai model kimliğiyle değiştirilir.",
                     "from_label": "Gelen model",
                     "to_label": "z.ai modeli",
-                    "from_placeholder": "örn. claude-opus-4-5-thinking",
-                    "to_placeholder": "örn. glm-4.7",
                     "add_rule": "Ekle",
-                    "empty": "Geçersiz kılma kuralı yapılandırılmadı."
+                    "empty": "Geçersiz kılma kuralı yapılandırılmadı.",
+                    "from_placeholder": "Örn: claude-3-opus",
+                    "to_placeholder": "Örn: glm-4"
                 },
                 "modes": {
                     "off": "Kapalı",
@@ -577,20 +578,48 @@
             "default_suffix": " (Varsayılan)",
             "original_id": "Orijinal Kimlik",
             "route_to": "Şuna Yönlendir",
-            "select_target_model": "Hedef Model Seç"
+            "select_target_model": "Hedef Model Seç",
+            "original_placeholder": "Orijinal (örn: gpt-4 veya gpt-4*)"
         },
         "multi_protocol": {
             "title": "Çoklu Protokol Desteği",
-            "subtitle": "Protokol Desteği",
-            "description": "Proxy hizmeti farklı araç gereksinimlerini karşılamak için hem OpenAI hem de Anthropic API formatlarını destekler",
-            "openai_label": "OpenAI Protokolü",
-            "anthropic_label": "Anthropic Protokolü",
+            "subtitle": "Protokolleri ve anahtarları araçlarınızla senkronize edin",
+            "description": "Proxy, kolay entegrasyon için OpenAI, Anthropic ve Gemini protokollerini destekler.",
+            "openai_label": "OpenAI",
+            "anthropic_label": "Anthropic",
             "openai_tools": "Cherry Studio, NextChat",
             "anthropic_tools": "Claude Code CLI",
-            "gemini_label": "Gemini Protokolü",
+            "gemini_label": "Gemini",
             "gemini_tools": "Google AI SDK, LangChain",
             "quick_integration": "Hızlı Entegrasyon",
-            "click_tip": "👆 Bu kodu güncellemek için soldaki herhangi bir modele tıklayın."
+            "click_tip": "👆 Model kodunu güncellemek için modele tıklayın",
+            "copy_base": "Base Kopyala"
+        },
+        "cli_sync": {
+            "title": "CLI Senkronizasyonu",
+            "subtitle": "Mevcut API URL'sini ve anahtarını AI CLI araçlarınızla senkronize edin",
+            "card_title": "{{name}} Yapılandırması",
+            "status": {
+                "not_installed": "Yüklü Değil",
+                "installed": "v{{version}}",
+                "synced": "Bu uygulamaya yönlendirilmiş",
+                "not_synced": "Senkronize Değil",
+                "detecting": "Algılanıyor...",
+                "current_base_url": "Mevcut Base URL"
+            },
+            "btn_sync": "Şimdi Senkronize Et",
+            "btn_view": "Yapılandırmayı Görüntüle",
+            "btn_restore": "Varsayılana Dön",
+            "restore_confirm": "{{name}} yapılandırmasını varsayılan değerlere sıfırlamak istediğinizden emin misiniz?",
+            "modal": {
+                "view_title": "{{name}} Yapılandırma İçeriği",
+                "copy_success": "Panoya kopyalandı"
+            },
+            "toast": {
+                "config_missing": "Lütfen önce bir API anahtarı oluşturun ve hizmeti başlatın",
+                "sync_success": "Başarılı! {{name}} kullanıma hazır.",
+                "sync_error": "{{name}} senkronizasyon hatası: {{error}}"
+            }
         },
         "supported_models": {
             "title": "Desteklenen Modeller ve Entegrasyon",

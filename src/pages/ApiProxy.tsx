@@ -1078,13 +1078,13 @@ print(response.text)`;
                                                 <div className="flex items-center gap-2 pt-2 border-t border-gray-200/50">
                                                     <input
                                                         className="input input-xs input-bordered flex-1 font-mono"
-                                                        placeholder="From (e.g. claude-3-opus)"
+                                                        placeholder={t('proxy.config.zai.models.from_placeholder') || "From (e.g. claude-3-opus)"}
                                                         value={zaiNewMappingFrom}
                                                         onChange={e => setZaiNewMappingFrom(e.target.value)}
                                                     />
                                                     <input
                                                         className="input input-xs input-bordered flex-1 font-mono"
-                                                        placeholder="To (e.g. glm-4)"
+                                                        placeholder={t('proxy.config.zai.models.to_placeholder') || "To (e.g. glm-4)"}
                                                         value={zaiNewMappingTo}
                                                         onChange={e => setZaiNewMappingTo(e.target.value)}
                                                     />
@@ -1436,7 +1436,7 @@ print(response.text)`;
                                                     <input
                                                         id="custom-key"
                                                         type="text"
-                                                        placeholder="Original (e.g. gpt-4 or gpt-4*)"
+                                                        placeholder={t('proxy.router.original_placeholder') || "Original (e.g. gpt-4 or gpt-4*)"}
                                                         className="input input-xs input-bordered flex-1 font-mono text-[11px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-gray-400 dark:placeholder:text-gray-600 h-8"
                                                     />
                                                     <div className="w-full sm:w-48">
@@ -1516,7 +1516,7 @@ print(response.text)`;
                                         <div className="flex items-center justify-between mb-2">
                                             <span className="text-xs font-bold text-blue-600">{t('proxy.multi_protocol.openai_label')}</span>
                                             <button onClick={(e) => { e.stopPropagation(); copyToClipboard(`${status.base_url}/v1`, 'openai'); }} className="btn btn-ghost btn-xs">
-                                                {copied === 'openai' ? <CheckCircle size={14} /> : <div className="flex items-center gap-1 text-[10px]"><Copy size={12} /> Base</div>}
+                                                {copied === 'openai' ? <CheckCircle size={14} /> : <div className="flex items-center gap-1 text-[10px] uppercase font-bold tracking-tighter"><Copy size={12} /> {t('proxy.multi_protocol.copy_base', { defaultValue: 'Base' })}</div>}
                                             </button>
                                         </div>
                                         <div className="space-y-1">
@@ -1619,7 +1619,7 @@ print(response.text)`;
                                                                     copyToClipboard(m.id, `model-${m.id}`);
                                                                 }}
                                                             >
-                                                                {copied === `model-${m.id}` ? <CheckCircle size={14} /> : <div className="flex items-center gap-1 text-[10px]"><Copy size={12} /> Copy</div>}
+                                                                {copied === `model-${m.id}` ? <CheckCircle size={14} /> : <div className="flex items-center gap-1 text-[10px] font-bold tracking-tight"><Copy size={12} /> {t('common.copy')}</div>}
                                                             </button>
                                                         </td>
                                                     </tr>

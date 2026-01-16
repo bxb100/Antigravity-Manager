@@ -3,6 +3,7 @@
         "loading": "Đang tải...",
         "load_more": "Tải thêm",
         "add": "Thêm mới",
+        "copy": "Sao chép",
         "action": "Hành động",
         "save": "Lưu",
         "saved": "Đã lưu",
@@ -429,10 +430,10 @@
                     "advanced_tooltip": "Ghi đè khớp chính xác tùy chọn. Nếu tên model đầu vào khớp chính xác với khóa quy tắc, nó sẽ được thay thế bằng model z.ai được ánh xạ.",
                     "from_label": "Model đầu vào",
                     "to_label": "Model z.ai",
-                    "from_placeholder": "ví dụ: claude-opus-4-5-thinking",
-                    "to_placeholder": "ví dụ: glm-4.7",
                     "add_rule": "Thêm",
-                    "empty": "Chưa có quy tắc ghi đè nào."
+                    "empty": "Chưa có quy tắc ghi đè nào.",
+                    "from_placeholder": "Ví dụ: claude-3-opus",
+                    "to_placeholder": "Ví dụ: glm-4"
                 },
                 "modes": {
                     "off": "Tắt",
@@ -608,20 +609,48 @@
             "default_suffix": " (Mặc định)",
             "original_id": "ID Gốc",
             "route_to": "Điều hướng tới",
-            "select_target_model": "Chọn Model Đích"
+            "select_target_model": "Chọn Model Đích",
+            "original_placeholder": "Gốc (ví dụ: gpt-4 hoặc gpt-4*)"
         },
         "multi_protocol": {
-            "title": "Hỗ trợ Đa Giao thức",
-            "subtitle": "Hỗ trợ Giao thức",
-            "description": "Dịch vụ Proxy hỗ trợ cả định dạng API OpenAI và Anthropic để đáp ứng các nhu cầu công cụ khác nhau",
-            "openai_label": "Giao thức OpenAI",
-            "anthropic_label": "Giao thức Anthropic",
+            "title": "Hỗ trợ đa giao thức",
+            "subtitle": "Đồng bộ API và Key với công cụ của bạn",
+            "description": "Proxy hỗ trợ các giao thức OpenAI, Anthropic và Gemini để dễ dàng tích hợp.",
+            "openai_label": "OpenAI",
+            "anthropic_label": "Anthropic",
             "openai_tools": "Cherry Studio, NextChat",
             "anthropic_tools": "Claude Code CLI",
-            "gemini_label": "Giao thức Gemini",
+            "gemini_label": "Gemini",
             "gemini_tools": "Google AI SDK, LangChain",
-            "quick_integration": "Tích hợp Nhanh",
-            "click_tip": "👆 Click vào bất kỳ model nào bên trái để cập nhật mã mẫu này."
+            "quick_integration": "Tích hợp nhanh",
+            "click_tip": "👆 Click vào model để cập nhật mã mẫu",
+            "copy_base": "Sao chép Base"
+        },
+        "cli_sync": {
+            "title": "Đồng bộ CLI",
+            "subtitle": "Đồng bộ URL API và Key hiện tại với các công cụ AI CLI của bạn",
+            "card_title": "Cấu hình {{name}}",
+            "status": {
+                "not_installed": "Chưa cài đặt",
+                "installed": "v{{version}}",
+                "synced": "Đã trỏ đến app này",
+                "not_synced": "Chưa đồng bộ",
+                "detecting": "Đang kiểm tra...",
+                "current_base_url": "Base URL hiện tại"
+            },
+            "btn_sync": "Đồng bộ ngay",
+            "btn_view": "Xem cấu hình",
+            "btn_restore": "Khôi phục",
+            "restore_confirm": "Bạn có chắc muốn khôi phục cấu hình {{name}} về mặc định không?",
+            "modal": {
+                "view_title": "Nội dung cấu hình {{name}}",
+                "copy_success": "Đã sao chép vào bộ nhớ tạm"
+            },
+            "toast": {
+                "config_missing": "Vui lòng tạo API Key và khởi chạy dịch vụ trước",
+                "sync_success": "Thành công! {{name}} đã sẵn sàng.",
+                "sync_error": "Lỗi đồng bộ {{name}}: {{error}}"
+            }
         },
         "supported_models": {
             "title": "Model Hỗ trợ & Tích hợp",

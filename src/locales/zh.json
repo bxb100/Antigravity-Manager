@@ -3,6 +3,7 @@
         "loading": "加载中...",
         "load_more": "加载更多",
         "add": "添加",
+        "copy": "复制",
         "action": "操作",
         "save": "保存",
         "saved": "保存成功",
@@ -436,10 +437,10 @@
                     "advanced_tooltip": "可选的精确匹配覆盖规则：如果 incoming model 字符串与规则键完全一致，则替换为对应的 z.ai 模型 ID。",
                     "from_label": "incoming model",
                     "to_label": "z.ai 模型",
-                    "from_placeholder": "例如：claude-opus-4-5-thinking",
-                    "to_placeholder": "例如：glm-4.7",
                     "add_rule": "添加",
-                    "empty": "未配置任何覆盖规则。"
+                    "empty": "尚未配置自定义替换规则。",
+                    "from_placeholder": "源模型 (如 claude-3-opus)",
+                    "to_placeholder": "映射至 (如 glm-4)"
                 },
                 "modes": {
                     "off": "关闭",
@@ -613,15 +614,16 @@
             "no_custom_mapping": "暂无自定义精确映射",
             "gemini3_only_warning": "⚠️ 仅支持 Gemini 3 系列",
             "default_suffix": "（默认）",
-            "select_target_model": "选择目标模型"
+            "select_target_model": "选择目标模型",
+            "original_placeholder": "原始名 (如 gpt-4 或 gpt-4*)"
         },
         "examples": {
             "title": "使用示例"
         },
         "multi_protocol": {
             "title": "多协议支持 (Multi-Protocol Support)",
-            "subtitle": "协议支持",
-            "description": "反代服务支持 OpenAI 和 Anthropic 两种 API 格式，满足不同工具需求",
+            "subtitle": "快速同步 API 地址与密钥到本地 AI 工具",
+            "description": "反代服务支持 OpenAI、Anthropic 和 Gemini 协议，满足不同工具的集成需求",
             "openai_label": "OpenAI 协议",
             "anthropic_label": "Anthropic 协议",
             "openai_tools": "Cherry Studio, NextChat",
@@ -629,7 +631,8 @@
             "gemini_label": "Gemini 协议",
             "gemini_tools": "Google AI SDK, LangChain",
             "quick_integration": "快速集成 (Quick Integration)",
-            "click_tip": "👆 点击左侧任意模型以更新代码"
+            "click_tip": "👆 点击模型以更新代码示例",
+            "copy_base": "复制 Base"
         },
         "supported_models": {
             "title": "支持模型与集成 (Supported Models & Integration)",
@@ -645,9 +648,10 @@
             "status": {
                 "not_installed": "未检测到安装",
                 "installed": "v{{version}}",
-                "synced": "已同步",
+                "synced": "已指向本项目",
                 "not_synced": "未同步",
-                "detecting": "检测中..."
+                "detecting": "检测中...",
+                "current_base_url": "当前接口地址 (Base URL)"
             },
             "btn_sync": "立即同步配置",
             "btn_view": "查看当前配置",
