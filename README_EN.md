@@ -132,6 +132,13 @@ Download from [GitHub Releases](https://github.com/lbjlaq/Antigravity-Manager/re
 *   **Windows**: `.msi` or portable `.zip`
 *   **Linux**: `.deb` or `AppImage`
 
+### Option C: Arch Linux (Official Script)
+We provide an official one-liner installation script for Arch Linux users. It automatically fetches the latest release from GitHub and installs it:
+```bash
+curl -sSL https://raw.githubusercontent.com/lbjlaq/Antigravity-Manager/main/deploy/arch/install.sh | bash
+```
+> **Tip**: This script will automatically download the latest `.deb` assets and install them using `makepkg`.
+
 ### Option C: Remote Server Deployment (Headless Linux)
 If you need to run on a headless remote Linux server (Ubuntu/Debian/CentOS), use our **Headless (Xvfb)** one-click deployment solution:
 

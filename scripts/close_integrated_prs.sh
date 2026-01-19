@@ -34,11 +34,12 @@ echo "关闭已集成到 ${VERSION} 的 PR"
 echo "================================================"
 echo ""
 
-# PR 列表：PR号 作者 标题
-declare -A PRS=(
-    ["825"]="IamAshrafee|[Internationalization] Device Fingerprint Dialog localization"
-    ["822"]="Koshikai|[Japanese] Add missing translations and refine terminology"
-    ["798"]="vietnhatthai|[Translation Fix] Correct spelling error in Vietnamese settings"
+# PR 列表：格式为 "PR号|作者|标题"
+PRS_LIST=(
+    "825|IamAshrafee|[Internationalization] Device Fingerprint Dialog localization"
+    "822|Koshikai|[Japanese] Add missing translations and refine terminology"
+    "798|vietnhatthai|[Translation Fix] Correct spelling error in Vietnamese settings"
+    "846|lengjingxu|[核心功能] 客户端热更新与 Token 统计系统"
 )
 
 # 检查 GitHub CLI 是否已安装
@@ -68,8 +69,10 @@ echo "✅ GitHub CLI 已就绪"
 echo ""
 
 # 遍历并处理每个 PR
-for PR_NUM in "${!PRS[@]}"; do
-    IFS='|' read -r AUTHOR TITLE <<< "${PRS[$PR_NUM]}"
+for item in "${PRS_LIST[@]}"; do
+    PR_NUM=$(echo "$item" | cut -d'|' -f1)
+    AUTHOR=$(echo "$item" | cut -d'|' -f2)
+    TITLE=$(echo "$item" | cut -d'|' -f3)
     
     echo "----------------------------------------"
     echo "处理 PR #${PR_NUM}: ${TITLE}"

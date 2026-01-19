@@ -131,6 +131,13 @@ brew install --cask antigravity-tools
 *   **Windows**: `.msi` 或 便携版 `.zip`
 *   **Linux**: `.deb` 或 `AppImage`
 
+### 选项 C: Arch Linux (官方脚本)
+我们为 Arch Linux 用户提供了一个官方的一键安装脚本，它会自动从 GitHub 获取最新版本并完成安装：
+```bash
+curl -sSL https://raw.githubusercontent.com/lbjlaq/Antigravity-Manager/main/deploy/arch/install.sh | bash
+```
+> **提示**: 该脚本会自动下载最新的 `.deb` 资产并使用 `makepkg` 进行安装。
+
 ### 选项 C: 远程服务器部署 (Headless Linux)
 如果您需要在无界面的远程 Linux 服务器（如 Ubuntu/Debian/CentOS）上运行，可以使用我们提供的 **Headless (Xvfb)** 一键部署方案：
 
