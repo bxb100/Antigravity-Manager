@@ -1,5 +1,5 @@
 # Antigravity Tools 🚀
-> Professional AI Account Management & Proxy System (v3.3.47)
+> Professional AI Account Management & Proxy System (v3.3.48)
 
 <div align="center">
   <img src="public/icon.png" alt="Antigravity Logo" width="120" height="120" style="border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
@@ -9,7 +9,7 @@
   
   <p>
     <a href="https://github.com/lbjlaq/Antigravity-Manager">
-      <img src="https://img.shields.io/badge/Version-3.3.47-blue?style=flat-square" alt="Version">
+      <img src="https://img.shields.io/badge/Version-3.3.48-blue?style=flat-square" alt="Version">
     </a>
     <img src="https://img.shields.io/badge/Tauri-v2-orange?style=flat-square" alt="Tauri">
     <img src="https://img.shields.io/badge/Backend-Rust-red?style=flat-square" alt="Rust">
@@ -211,6 +211,11 @@ print(response.choices[0].message.content)
 ## 📝 Developer & Community
 
 *   **Changelog**:
+    *   **v3.3.48 (2026-01-21)**:
+        -   **[Core Fix] Windows Console Flashing Fix (Fix PR #933)**:
+            -   **Problem**: On Windows, launching the application or executing background CLI commands would sometimes cause a command prompt window to briefly flash, disrupting the user experience.
+            -   **Fix**: Added the `CREATE_NO_WINDOW` flag to the `cloudflared` process creation logic, ensuring all background processes run silently without visible windows.
+            -   **Impact**: Resolved the window flashing issue for Windows users during app startup or CLI interactions.
     *   **v3.3.47 (2026-01-21)**:
         -   **[Core Fix] Image Generation API Parameter Mapping Enhancement (Fix Issue #911)**:
             -   **Background**: The `/v1/images/generations` endpoint had two parameter mapping defects:
